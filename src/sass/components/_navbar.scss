@@ -1,0 +1,114 @@
+.navbar {
+  background-color: $darkBlue;
+  .container {
+    @extend %flex-space;
+    padding: 20px 0 20px;
+    @media ($maxMobile) {
+      padding: {
+        left: 15px;
+        right: 15px;
+      }
+    }
+    .logo {
+      a {
+        @extend %flex-center;
+        cursor: pointer;
+        user-select: none;
+        color: $yellowColor;
+        svg {
+          font-size: 22px;
+        }
+        span {
+          font: {
+            size: 22px;
+            weight: 500;
+          }
+        }
+      }
+    }
+    .links {
+      user-select: none;
+      @extend %flex-center;
+      gap: 30px;
+      @media ($maxMobile) {
+        display: none;
+        &.active {
+          position: absolute;
+          right: 0;
+          top: 70px;
+          flex-direction: column;
+          width: 100%;
+          text-align: center;
+          gap: 0px;
+          display: block;
+        }
+      }
+      li {
+        a {
+          color: $whiteColor;
+          font: {
+            size: 16px;
+            weight: 500;
+          }
+          transition: 0.3s;
+          &:hover {
+            color: $lightBlue;
+          }
+        }
+        @media ($maxMobile) {
+          width: 100%;
+          background-color: blue;
+          padding: 20px 0 20px;
+          &:not(:last-of-type) {
+            border-bottom: 1px solid $darkBlue;
+          }
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            &:hover {
+              color: $yellowColor;
+            }
+          }
+        }
+      }
+    }
+    .button {
+      display: none;
+      @media ($maxMobile) {
+        display: block;
+      }
+      position: relative;
+      width: 40px;
+      height: 30px;
+      overflow: hidden;
+      cursor: pointer;
+      span {
+        display: block;
+        height: calc(60% / 3);
+        background-color: #fff;
+        &:not(:last-of-type) {
+          margin-bottom: 6px;
+        }
+        &:nth-of-type(2) {
+          width: 60%;
+          transition: 0.3s;
+        }
+      }
+      &:hover {
+        span {
+          &:nth-of-type(2) {
+            width: 100%;
+          }
+        }
+      }
+      &.active {
+        span {
+          &:nth-of-type(2) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

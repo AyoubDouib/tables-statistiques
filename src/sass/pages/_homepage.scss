@@ -1,0 +1,39 @@
+.homepage {
+  height: calc(100vh - 132.67px);
+  @extend %flex-center;
+  .container {
+    padding: 70px 0 70px;
+    text-align: center;
+    a {
+      display: block;
+      padding: 20px 20px;
+      border-radius: 0px 20px 0px 20px;
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+      .title {
+        font: {
+          size: 20px;
+          weight: 600;
+        }
+        color: #fff;
+        z-index: 10;
+      }
+      &:first-of-type {
+        background: #ed213a;
+        background: -webkit-linear-gradient(to right, #93291e, #ed213a);
+        background: linear-gradient(to right, #93291e, #ed213a);
+      }
+      &:last-of-type {
+        background: #7f7fd5;
+        background: -webkit-linear-gradient(
+          to right,
+          #91eae4,
+          #86a8e7,
+          #7f7fd5
+        );
+        background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+      }
+    }
+  }
+}

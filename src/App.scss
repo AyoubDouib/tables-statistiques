@@ -1,0 +1,12 @@
+// Components
+@import "./sass/helpers/placeholders";
+@import "./sass/helpers/colors";
+@import "./sass/helpers/global-rules";
+@import "./sass/helpers/typography";
+
+// Pages
+@import "./sass/components/navbar";
+@import "./sass/pages/homepage";
+@import "./sass/pages/loi-normale";
+@import "./sass/pages/loi-du-student";
+@import "./sass/components/footer";

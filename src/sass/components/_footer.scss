@@ -1,0 +1,48 @@
+.footer {
+  background-color: $darkBlue;
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+  .container {
+    text-align: center;
+    .info {
+      @extend %flex-center;
+      gap: 20px;
+      .me {
+        font: {
+          size: 18px;
+          weight: 500;
+        }
+        span {
+          color: $yellowColor;
+          font-weight: 600;
+        }
+      }
+      .links {
+        @extend %flex-center;
+        gap: 8px;
+        a {
+          svg {
+            font-size: 32px;
+            color: #ddd;
+            transition: 0.3s;
+          }
+          &:first-of-type {
+            svg {
+              &:hover {
+                color: #e1306c;
+              }
+            }
+          }
+          &:last-of-type {
+            svg {
+              &:hover {
+                color: #0e76a8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

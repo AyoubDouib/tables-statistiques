@@ -16,6 +16,9 @@
         span {
           color: $yellowColor;
           font-weight: 600;
+          @media ($maxMobile) {
+            font-size: 16px;
+          }
         }
       }
       .links {

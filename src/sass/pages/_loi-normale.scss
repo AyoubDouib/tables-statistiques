@@ -47,6 +47,8 @@ input::-webkit-inner-spin-button {
         @media ($maxMobile) {
           width: 80%;
           padding: 15px 20px;
+          box-shadow: none;
+          border: 1px solid #000;
         }
       }
       button {

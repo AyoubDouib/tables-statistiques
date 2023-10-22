@@ -6,7 +6,9 @@ import LoiStudent from "./components/pages/LoiStudent";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      basename={import.meta.env.DEV ? '/' : '/tables-statistiques/'}  
+    >
       <Routes>
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<HomePage />} />

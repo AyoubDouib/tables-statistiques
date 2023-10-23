@@ -22,7 +22,6 @@ export default function Navbar() {
             <TbMathIntegralX />
             <span>Tables Statistiques</span>
           </Link>
-          <img src="https://ayoubdouib03.pythonanywhere.com/track" alt="Img" />
         </div>
         <ul className={navbarActive ? "links active" : "links"}>
           <li>

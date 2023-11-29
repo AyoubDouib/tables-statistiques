@@ -10,6 +10,9 @@ export default function HomePage() {
         <Link to="loi-du-student">
           <div className="title">Table de Loi du Student</div>
         </Link>
+        <Link to="loi-khi-deux">
+          <div className="title">Table de Loi du Khi Deux</div>
+        </Link>
       </div>
     </div>
   )

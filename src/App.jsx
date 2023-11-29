@@ -3,6 +3,7 @@ import HomeLayout from "./components/layout/HomeLayout";
 import HomePage from "./components/pages/HomePage";
 import LoiNormale from "./components/pages/LoiNormale";
 import LoiStudent from "./components/pages/LoiStudent";
+import LoiKhiDeux from "./components/pages/LoiKhiDeux";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="loi-normale" element={<LoiNormale />} />
           <Route path="loi-du-student" element={<LoiStudent />} />
+          <Route path="loi-khi-deux" element={<LoiKhiDeux />} />
         </Route>
       </Routes>
     </BrowserRouter>

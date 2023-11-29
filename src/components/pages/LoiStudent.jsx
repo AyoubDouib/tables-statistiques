@@ -1,10 +1,11 @@
 import { useState } from "react";
 
 export default function LoiStudent() {
-  const [dataEntred, setDataEntred] = useState();
+  const [degreValue, setDegreValue] = useState();
+  const [probaValue, setProbaValue] = useState();
   const [error, setError] = useState("");
   const [result, setResult] = useState();
-  const hLine = [995, 99, 975, 95, 90, 80, 75, 70, 60, 55];
+  const hLine = [0.995, 0.99, 0.975, 0.95, 0.90, 0.80, 0.75, 0.70, 0.60, 0.55];
   const vLine = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 40, 60, 120, 999
   ];
@@ -418,45 +419,30 @@ export default function LoiStudent() {
       "0,126",
     ],
   ]
-  function changeInput(e) {
-    setDataEntred(e.target.value);
+  function changeDegreValue(e) {
+    setDegreValue(e.target.value);
+  }
+  function changeProbaValue(e) {
+    setProbaValue(e.target.value);
   }
   function getData() {
     setError()
     setResult()
-    const dataEntredString = dataEntred.toString();
-    // Get Horizontal Index
-    let dataH;
-    if (dataEntredString[1] === ".") {
-      dataH = dataEntredString.slice(2, 5);
-    } else if (dataEntredString[2] === ".") {
-      dataH = dataEntredString.slice(3, 6);
-    } else if (dataEntredString[3] === ".") {
-      dataH = dataEntredString.slice(4, 7);
-    } 
-    const hIndex = hLine.indexOf(+dataH);
+    const hIndex = hLine.indexOf(+probaValue);
 
-    // Get Vertical Index
-    let dataV;
-    if (dataEntredString[1] === ".") {
-      dataV = dataEntredString.slice(0, 1);
-    } else if (dataEntredString[2] === ".") {
-      dataV = dataEntredString.slice(0, 2);
-    } else if (dataEntredString[3] === ".") {
-      dataV = dataEntredString.slice(0, 3);
-    } 
     let vIndex;
-    if (dataV > 120) {
+    if (+degreValue > 120) {
       vIndex = vLine.indexOf(999);
     } else {
-      vIndex = vLine.indexOf(+dataV);
+      vIndex = vLine.indexOf(+degreValue);
     }
-    if (hIndex === -1 || vIndex === -1) {
-      setError("Valeur introuvable!")
+    
+    if (+vIndex > 0 && +hIndex === -1) {
+      setResult(1);
+    } else {
+      setResult(sheduleData[vIndex][hIndex])
     }
-
-    // Return The Result
-    setResult(sheduleData[vIndex][hIndex])
+    
   }
   return (
     <div className="loi-du-student">
@@ -464,7 +450,10 @@ export default function LoiStudent() {
         <div className="title">Table de Loi du Student</div>
         <div className="description">{"P(T < t)"}</div>
         <div className="action-section">
-          <input type="number" placeholder="Entrer un nombre" value={dataEntred} onChange={changeInput}/>
+          <div className="input-field">
+            <input type="number" placeholder="Degré de liberté" onChange={changeDegreValue}/>
+            <input type="number" placeholder="Probabilité" onChange={changeProbaValue}/>
+          </div>
           <button onClick={getData}>Générer</button>
         </div>
         <div className="resultat">

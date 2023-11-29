@@ -33,19 +33,29 @@
         }
       }
       &:first-of-type {
-        background: #ed213a;
-        background: -webkit-linear-gradient(to right, #93291e, #ed213a);
-        background: linear-gradient(to right, #93291e, #ed213a);
+        background-color: #0093e9;
+        background-image: -webkit-linear-gradient(
+          160deg,
+          #0093e9 0%,
+          #80d0c7 100%
+        );
+        background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+      }
+      &:nth-of-type(2) {
+        background-image: -webkit-linear-gradient(
+          120deg,
+          #f6d365 0%,
+          #fda085 100%
+        );
+        background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
       }
       &:last-of-type {
-        background: #7f7fd5;
-        background: -webkit-linear-gradient(
-          to right,
-          #91eae4,
-          #86a8e7,
-          #7f7fd5
+        background-image: -webkit-linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 100%
         );
-        background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+        background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       }
     }
   }

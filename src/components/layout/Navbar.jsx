@@ -34,6 +34,11 @@ export default function Navbar() {
               Loi du Student
             </Link>
           </li>
+          <li>
+            <Link to="/loi-khi-deux" onClick={disableNavbar}>
+              Loi du Khi Deux
+            </Link>
+          </li>
         </ul>
         <div
           className={buttonActive ? "button active" : "button"}

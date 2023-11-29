@@ -538,14 +538,17 @@ export default function LoiKhiDeux() {
   function getData() {
     setError()
     setResult()
-    probaValue.replace(",", ".");
-    const vIndex = vLine.indexOf(+degreValue);
-    const hIndex = hLine.indexOf(+probaValue);
-    if (vIndex === -1 || hIndex === -1) {
-      setError("Les valeurs entrées ne se trouvent pas dans la table de Khi Deux")
+    if (probaValue) {
+      let data = probaValue.slice(2, 5);
+      setProbaValue("0." + data);
+      const vIndex = vLine.indexOf(+degreValue);
+      const hIndex = hLine.indexOf(+probaValue);
+      if (vIndex === -1 || hIndex === -1) {
+        setError("Les valeurs entrées ne se trouvent pas dans la table de Khi Deux")
+      }
+      // Return The Result
+      setResult(sheduleData[vIndex][hIndex])
     }
-    // Return The Result
-    setResult(sheduleData[vIndex][hIndex])
   }
   
   return (

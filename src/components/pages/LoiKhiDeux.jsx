@@ -8,7 +8,7 @@ export default function LoiKhiDeux() {
   const vLine = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 40, 50, 60, 70, 80, 90, 100
   ];
-  const hLine = ["0.005", "0.010", "0.025", "0.050", "0.100", "0.50", "0.90", "0.95", "0.975", "0.99", "0.995", "0.999"];
+  const hLine = ["005", "010", "025", "050", "100", "50", "90", "95", "975", "99", "995", "999"];
   const sheduleData = [
     [
       "0,000",
@@ -540,15 +540,14 @@ export default function LoiKhiDeux() {
     setResult()
     if (probaValue) {
       let data = probaValue.slice(2, 5);
-      setProbaValue("0." + data);
+      const vIndex = vLine.indexOf(+degreValue);
+      const hIndex = hLine.indexOf(data);
+      // if (vIndex === -1 || hIndex === -1) {
+      //   setError("Les valeurs entrées ne se trouvent pas dans la table de Khi Deux")
+      // }
+      // Return The Result
+      setResult(sheduleData[vIndex][hIndex])
     }
-    const vIndex = vLine.indexOf(+degreValue);
-    const hIndex = hLine.indexOf(probaValue);
-    if (vIndex === -1 || hIndex === -1) {
-      setError("Les valeurs entrées ne se trouvent pas dans la table de Khi Deux")
-    }
-    // Return The Result
-    setResult(sheduleData[vIndex][hIndex])
   }
   
   return (

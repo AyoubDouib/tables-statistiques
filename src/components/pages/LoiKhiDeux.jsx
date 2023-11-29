@@ -538,6 +538,7 @@ export default function LoiKhiDeux() {
   function getData() {
     setError()
     setResult()
+    probaValue.replace(",", ".");
     const vIndex = vLine.indexOf(+degreValue);
     const hIndex = hLine.indexOf(+probaValue);
     if (vIndex === -1 || hIndex === -1) {

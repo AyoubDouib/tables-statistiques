@@ -440,18 +440,18 @@ export default function LoiNormale() {
       ? setError("La valeur doit être inférieur à 3,49 !")
       : null;
     setResult();
-    const dataEntredString = dataEntred.toString();
+    let dataEntredString = dataEntred.toString();
+    dataEntredString = dataEntred.replace(/,/g, '.');
     // Get Horizontal Index
     const dataH = dataEntredString.slice(3, 4);
     const hIndex = hLine.indexOf(+dataH);
-
     // Get Vertical Index
     const dataV = dataEntredString.slice(0, 3);
     const vIndex = vLine.indexOf(+dataV);
-
     // Return The Result
     setResult(sheduleData[vIndex][hIndex]);
     setError();
+
   }
   return (
     <div className="loi-normale">

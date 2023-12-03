@@ -556,8 +556,8 @@ export default function LoiKhiDeux() {
         <div className="description">P(X<sup>2</sup> {"<"} a)</div>
         <div className="action-section">
           <div className="input-field">
-            <input type="number" placeholder="Degré de liberté" onChange={changeDegreValue}/>
-            <input type="number" placeholder="Probabilité" onChange={changeProbaValue}/>
+            <input type="text" placeholder="Degré de liberté" onChange={changeDegreValue}/>
+            <input type="text" placeholder="Probabilité" onChange={changeProbaValue}/>
           </div>
           <button onClick={getData}>Générer</button>
         </div>

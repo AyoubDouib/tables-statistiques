@@ -451,7 +451,6 @@ export default function LoiNormale() {
     // Return The Result
     setResult(sheduleData[vIndex][hIndex]);
     setError();
-
   }
   return (
     <div className="loi-normale">
@@ -460,7 +459,7 @@ export default function LoiNormale() {
         <div className="description">{"P(x < u)"}</div>
         <div className="action-section">
           <input
-            type="number"
+            type="text"
             placeholder="Entrer un nombre entre 0,00 et 3,49"
             value={dataEntred}
             onChange={changeInput}

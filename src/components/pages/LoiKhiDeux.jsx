@@ -539,8 +539,10 @@ export default function LoiKhiDeux() {
     setError()
     setResult()
     let data = probaValue.slice(2, 5);
+    let dataEntredString = data.toString();
+    dataEntredString = data.replace(/,/g, '.');
     const vIndex = vLine.indexOf(+degreValue);
-    const hIndex = hLine.indexOf(data);
+    const hIndex = hLine.indexOf(dataEntredString);
     // if (vIndex === -1 || hIndex === -1) {
     //   setError("Les valeurs entrées ne se trouvent pas dans la table de Khi Deux")
     // }

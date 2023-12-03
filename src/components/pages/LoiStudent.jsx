@@ -428,7 +428,9 @@ export default function LoiStudent() {
   function getData() {
     setError()
     setResult()
-    const hIndex = hLine.indexOf(+probaValue);
+    let dataEntredString = probaValue.toString();
+    dataEntredString = probaValue.replace(/,/g, '.');
+    const hIndex = hLine.indexOf(+dataEntredString);
 
     let vIndex;
     if (+degreValue > 120) {

@@ -439,7 +439,7 @@ export default function LoiStudent() {
       vIndex = vLine.indexOf(+degreValue);
     }
     
-    if (+vIndex > 0 && +hIndex === -1) {
+    if (+vIndex > 0 && hIndex === -1) {
       setResult(1);
     } else {
       setResult(sheduleData[vIndex][hIndex])

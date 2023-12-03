@@ -8,7 +8,7 @@ import LoiKhiDeux from "./components/pages/LoiKhiDeux";
 export default function App() {
   return (
     <BrowserRouter
-      // basename={import.meta.env.DEV ? '/' : '/tables-statistiques/'}  
+      basename={import.meta.env.DEV ? '/' : '/tables-statistiques/'}  
     >
       <Routes>
         <Route path="/" element={<HomeLayout />}>
